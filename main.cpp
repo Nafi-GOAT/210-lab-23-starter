@@ -1,5 +1,5 @@
 //
-//Mehraj Hasan Nafi|Lab24
+//Mehraj Hasan Nafi|Lab23
 //IDE: VS code
 //
 #include <iostream>
