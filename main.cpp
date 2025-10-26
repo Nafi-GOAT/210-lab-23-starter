@@ -7,6 +7,7 @@
 #include <iomanip>
 #include <list>
 #include <cstdlib>
+#include <ctime>
 #include "Goat.h"
 using namespace std;
 
@@ -63,18 +64,31 @@ void add_goat(list<Goat> &trip, string names[], string colors[]) {
     g.display();
 }
 
- void display_trip(list<goat> trip) {
+ void display_trip(list<Goat> trip) {
     if (trip.empty()) {
         cout << "It is empty." << endl;
         return;
     }
 
-    int a = 0;
+    int a = 1;
     for (Goat g : trip) {
         cout << "[ " << a << " ] ";
         g.display();
         a++;
     }
+}
+
+int select_goat(list<Goat> trip) {
+    display_trip(trip);
+    cout << "Which spot would you like to delete --> ";
+    int choice;
+    cin >> choice;
+
+    while (choice < 1 || choice > trip.size()) {
+        cout << "Re-enter your choice: ";
+        cin >> choice;
+    }
+    return choice = 1;
 }
 
 
