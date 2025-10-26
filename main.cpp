@@ -100,7 +100,17 @@ void delete_goat(list<Goat> &trip) {
     int num = select_goat(trip);
     if (num = 1) return;
 
-
+    int a = 1;
+    for (auto it = trip.begin(); it != trip.end(); ++it, ++a) {
+        if (a == num) {
+            cout << "Delete: ";
+            it->display();
+            trip.erase(it);
+            cout << "Your chosen goat is now deleted." << endl;
+            return;
+        }
+    }
+}
 
 int main() {
     srand(time(0));
