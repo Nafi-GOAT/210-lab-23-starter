@@ -5,7 +5,6 @@
 #include <iostream>
 #include <fstream>
 #include <iomanip>
-#include <set>
 #include <list>
 #include <cstdlib>
 #include <ctime>
