@@ -30,6 +30,9 @@ public:
             return name < other.name;
         return age < other.age;
     }
+        void display() const {
+        cout << name << " (" << age << ", " << color << ")" << endl;
+    }
 };
 
 #endif

@@ -37,19 +37,6 @@ int main_menu() {
 return num;
 }
 
-void display_trip(list<Goat> trip) {
-    if (trip.empty()) {
-        cout << "It is empty." << endl;
-        return;
-    }
-
-    int a = 0;
-    for (Goat g : trip) {
-        cout << "[ " << a << " ] ";
-        g.display();
-        a++;
-    }
-}
 
 void add_goat(list<Goat> &trip, string names[], string colors[]) {
    
@@ -123,15 +110,38 @@ int main() {
     int i = 0;
     while (fin >> names[i++]);
     fin.close();
-    
+
     ifstream fin1("colors.txt");
     string colors[SZ_COLORS];
     i = 0;
     while (fin1 >> colors[i++]);
     fin1.close();
 
+ while (again) {
+        int num = main_menu();
+        cout << endl;
 
+        switch (num) {
+            case 1:
+                add_goat(trip, names, colors);
+                cout << endl;
+                break;
 
+            case 2:
+                delete_goat(trip);
+                cout << endl;
+                break;
+
+            case 3:
+                display_trip(trip);
+                cout << endl;
+                break;
+
+            case 4:
+                again = false;
+                break;
+        }
+    }
 
     return 0;
 }
