@@ -5,7 +5,7 @@
 #include <iostream>
 #include <fstream>
 #include <iomanip>
-#include <set>
+#include <list>
 #include <cstdlib>
 #include <ctime>
 #include "Goat.h"
@@ -13,10 +13,10 @@ using namespace std;
 
 const int SZ_NAMES = 200, SZ_COLORS = 25, MAX_AGE = 20;
 
-int select_goat(set<Goat> trip);
-void delete_goat(set<Goat> &trip);
-void add_goat(set<Goat> &trip, string [], string []);
-void display_trip(set<Goat> trip);
+int select_goat(list<Goat> trip);
+void delete_goat(list<Goat> &trip);
+void add_goat(list<Goat> &trip, string [], string []);
+void display_trip(list<Goat> trip);
 int main_menu();
 
 // Function to display the main menu and get user choice
@@ -122,7 +122,7 @@ int main() {
  while (again) {
         int num = main_menu();
         cout << endl;
-
+ 
         switch (num) {
             case 1:
                 add_goat(trip, names, colors);
