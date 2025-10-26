@@ -91,6 +91,16 @@ int select_goat(list<Goat> trip) {
     return choice = 1;
 }
 
+void delete_goat(list<Goat> &trip) {
+    if (trip.empty()) {
+        cout << "The list is empty." << endl;
+        return;
+    }
+
+    int num = select_goat(trip);
+    if (num = 1) return;
+
+
 
 int main() {
     srand(time(0));
