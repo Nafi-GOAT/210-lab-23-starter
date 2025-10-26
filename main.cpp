@@ -1,7 +1,12 @@
+//
+//Mehraj Hasan Nafi|Lab23
+//IDE: VS code
+//
 #include <iostream>
 #include <fstream>
 #include <iomanip>
 #include <list>
+#include <cstdlib>
 #include "Goat.h"
 using namespace std;
 
@@ -12,6 +17,24 @@ void delete_goat(list<Goat> &trip);
 void add_goat(list<Goat> &trip, string [], string []);
 void display_trip(list<Goat> trip);
 int main_menu();
+
+int main_menu() {
+    int num;
+
+    cout << "\n--- Goat MANAGER 3001---\n";
+    cout << "1. Add a goat \n";
+    cout << "2. Delete a goat\n";
+    cout << "3. List of goat\n";
+    cout << "4. Quit\n";
+    cout << "Enter your choice: ";
+    cin >> num;
+
+        while (num < 1 || num > 4) {
+       cout << "Invalid number choice, please re-enter: ";
+        cin >> num;
+    }
+return num;
+}
 
 int main() {
     srand(time(0));
