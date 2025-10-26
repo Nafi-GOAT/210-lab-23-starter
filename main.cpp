@@ -36,7 +36,21 @@ int main_menu() {
 return num;
 }
 
-void add_goat(list<Goat> &trip, string name[], string color[]) {
+void display_trip(list<Goat> trip) {
+    if (trip.empty()) {
+        cout << "It is empty." << endl;
+        return;
+    }
+
+    int a = 0;
+    for (Goat g : trip) {
+        cout << "[ " << a << " ] ";
+        g.display();
+        a++;
+    }
+}
+
+void add_goat(list<Goat> &trip, string names[], string colors[]) {
    
     int nameI = rand() % SZ_NAMES;
     int colorI = rand() % SZ_COLORS;
@@ -47,6 +61,20 @@ void add_goat(list<Goat> &trip, string name[], string color[]) {
 
     cout << "New goat: ";
     g.display();
+}
+
+ void display_trip(list<goat> trip) {
+    if (trip.empty()) {
+        cout << "It is empty." << endl;
+        return;
+    }
+
+    int a = 0;
+    for (Goat g : trip) {
+        cout << "[ " << a << " ] ";
+        g.display();
+        a++;
+    }
 }
 
 
