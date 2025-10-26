@@ -88,7 +88,7 @@ int select_goat(list<Goat> trip) {
         cout << "Re-enter your choice: ";
         cin >> choice;
     }
-    return choice = 1;
+    return choice - 1;
 }
 
 void delete_goat(list<Goat> &trip) {
@@ -98,9 +98,9 @@ void delete_goat(list<Goat> &trip) {
     }
 
     int num = select_goat(trip);
-    if (num = 1) return;
+    if (num == -1) return;
 
-    int a = 1;
+    int a = 0;
     for (auto it = trip.begin(); it != trip.end(); ++it, ++a) {
         if (a == num) {
             cout << "Delete: ";
@@ -114,7 +114,8 @@ void delete_goat(list<Goat> &trip) {
 
 int main() {
     srand(time(0));
-    bool again;
+    bool again = true;
+    list<Goat> trip;
 
     // read & populate arrays for names and colors
     ifstream fin("names.txt");
@@ -122,6 +123,7 @@ int main() {
     int i = 0;
     while (fin >> names[i++]);
     fin.close();
+    
     ifstream fin1("colors.txt");
     string colors[SZ_COLORS];
     i = 0;
